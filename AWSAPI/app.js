@@ -16,7 +16,7 @@ app.post('/AWSAPI/postCredentials', (req, res) => {
         accessKeyId: req.body.accessKeyId,
         secretAccessKey: req.body.secretAccessKey,
         region: req.body.region
-    };
+    }
     let awsfile = JSON.stringify(awscredentialdata);
     fs.writeFileSync('awscredentials.json', awsfile);
     AWS.config.loadFromPath('awscredentials.json');
