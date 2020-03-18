@@ -1,0 +1,42 @@
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="accessKeyId" class="col-sm-2 col-form-label">Access Key Id</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="accessKeyId" placeholder="Access Key Id" [ngClass]="{ 'is-invalid': submitted && f.accessKeyId.errors }">
+        <div *ngIf="submitted && f.accessKeyId.errors" class="invalid-feedback">
+          <div *ngIf="f.accessKeyId.errors.required">Access Key Id is required</div>
+          <div *ngIf="f.accessKeyId.errors.minlength">Access Key Id must be at least 20 characters</div>
+          <div *ngIf="f.accessKeyId.errors.maxlength">Access Key Id must not be more than 20 characters</div>
+      </div></div>
+    </div>
+    <div class="form-group">
+      <label for="secretAccessKey" class="col-sm-2 col-form-label">Secret Access Key</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" formControlName="secretAccessKey" placeholder="Secret Access Key" [ngClass]="{ 'is-invalid': submitted && f.secretAccessKey.errors }">
+        <div *ngIf="submitted && f.secretAccessKey.errors" class="invalid-feedback">
+          <div *ngIf="f.secretAccessKey.errors.required">Secret Access key is required</div>
+          <div *ngIf="f.secretAccessKey.errors.minlength">Secet Access Key must be at least 40 characters</div>
+          <div *ngIf="f.secretAccessKey.errors.maxlength">Secret Access Key must not be more than 40 characters</div>
+      </div></div>
+    </div>
+    <div class="form-group">
+      <label for="region" class="col-sm-2 col-form-label">Region</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="region" placeholder="Region" [ngClass]="{ 'is-invalid': submitted && f.region.errors }">
+        <div *ngIf="submitted && f.region.errors" class="invalid-feedback">
+          <div *ngIf="f.region.errors.required">Region is required</div>
+      </div></div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+      </div>
+    </div>
+    <div class="form-group">
+      {{data}}
+    </div>
+    <div class="form-group">
+      {{err}}
+    </div>
+  

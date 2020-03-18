@@ -1,0 +1,110 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+  <div class="container">
+    <a class="navbar-brand" href="#">AWS </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/cost">Cost</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/compliance">Compliance</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-dark bg-dark justify-content-center">
+  <span class="navbar-brand mb-0 h1">AWS BILLING DETAILS</span>
+</nav>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <legend class="col-form-label col-sm-2 pt-0">Region</legend>
+    <div class="col-sm-10">
+      <select class="form-control" formControlName="region" [ngClass]="{ 'is-invalid': submitted && f.region.errors }">
+       <option *ngFor="let regio of regions">{{regio}}</option>
+      </select>
+                  <div *ngIf="submitted && f.region.errors" class="invalid-feedback">
+                    <div *ngIf="f.region.errors.required">Region is required</div>
+                </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <legend class="col-form-label col-sm-2 pt-0">Services</legend>
+    <div class="col-sm-10">
+      <select class="form-control" formControlName="service" [ngClass]="{ 'is-invalid': submitted && f.service.errors }">
+       <option *ngFor="let serv of services">{{serv}}</option>
+      </select>
+                  <div *ngIf="submitted && f.service.errors" class="invalid-feedback">
+                    <div *ngIf="f.service.errors.required">Service is required</div>
+                </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+  <legend class="col-form-label col-sm-2 pt-0">Granularity</legend>
+    <div class="col-sm-10">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" formControlName="granularity" id="DAILY" value="DAILY" [ngClass]="{ 'is-invalid': submitted && f.granularity.errors }">
+        <label class="form-check-label" for="DAILY">
+          DAILY
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" formControlName="granularity" id="MONTHLY" value="MONTHLY" [ngClass]="{ 'is-invalid': submitted && f.granularity.errors }">
+        <label class="form-check-label" for="MONTHLY">
+          MONTHLY
+        </label>
+      </div>
+                <div *ngIf="submitted && f.granularity.errors" class="invalid-feedback">
+                  <div *ngIf="f.granularity.errors.required">Granularity is required</div>
+              </div>
+    </div>
+  </div>
+
+  
+  <div class="form-group">
+    <legend class="col-form-label col-sm-2 pt-0">Start Date</legend>
+    <div class="col-sm-10">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy/mm/dd" name = "Start" formControlName="Start" ngbDatepicker #d1="ngbDatepicker"[ngClass]="{ 'is-invalid': submitted && f.Start.errors }">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
+        </div>
+        <div *ngIf="submitted && f.Start.errors" class="invalid-feedback">
+          <div *ngIf="f.Start.errors.required">Start Date is required</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- [(ngModel)]="model2" -->
+  <div class="form-group">
+    <legend class="col-form-label col-sm-2 pt-0">End Date</legend>
+    <div class="col-sm-10">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy/mm/dd" name="End" formControlName="End" ngbDatepicker #d2="ngbDatepicker" [ngClass]="{ 'is-invalid': submitted && f.End.errors }">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+        </div>
+        <div *ngIf="submitted && f.End.errors" class="invalid-feedback">
+          <div *ngIf="f.End.errors.required">End Date is required</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+    </div>
+  </div>
+  <!-- routerLink="/display/{{data}}" -->
+  <div class="form-group">
+    {{data}}
+  </div>
+  <div class="form-group">
+    {{err}}
+  </div>
+
+</form>

@@ -1,0 +1,148 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+  <div class="container">
+    <a class="navbar-brand" href="#">AWS </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/cost">Cost</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/compliance">Compliance</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- <div *ngIf="loading else loaded">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div> -->
+
+<!-- <ng-template #loaded>
+  <div *ngFor="let user of users">{{user}}</div> -->
+
+<table class="table table-hover" id="test">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Rule Id</th>
+      <th scope="col">Services</th>
+      <th scope="col">Risk Level</th>
+      <th scope="col">Success Compliance</th>
+      <th scope="col">Danger Compliance</th>
+      <th scope="col">References</th>
+      <th scope="col">Reports</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">A1</th>
+      <th>Amazon Health</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>HEALTH-001</td>
+      <td>Health Events</td>
+      <td>Medium</td>
+      <td class="bg-success">Yes</td>
+      <td class="bg-danger">No</td>
+      <td>Provides real-time insights into the state of your AWS environment and infrastructure.</td>
+      <td>Health Report</td>
+    </tr>
+    <tr class="table-active">
+      <th scope="row">A2</th>
+      <th>Amazon Athena</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Athena</td>
+      <td>Enable Encryption for AWS Athena Query Results</td>
+      <td>High (not acceptable risk)</td>
+      <td class="bg-success">Yes</td>
+      <td class="bg-danger">No</td>
+      <td>Ensure that AWS Athena query results stored in Amazon S3 are encrypted at rest.</td>
+      <td>Athena Report</td>
+    </tr>
+    <tr class="table-active">
+      <th scope="row">A3</th>
+      <th>Amazon Guard​Duty</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>GD-001 </td>
+      <td>GuardDuty Enabled</td>
+      <td>Medium (should be achieved)</td>
+      <td class="bg-success">Yes</td>
+      <td class="bg-danger">No</td>
+      <td>Ensure Amazon GuardDuty is enabled to help you protect your AWS accounts and workloads against security
+        threats.</td>
+      <td>GuardDuty Report 1</td>
+    </tr>
+    <tr>
+      <td>GD-002 </td>
+      <td>GuardDuty Findings</td>
+      <td>Medium (should be achieved)</td>
+      <td class="bg-success">Yes</td>
+      <td class="bg-danger">No</td>
+      <td>Ensure that Amazon GuardDuty findings are highlighted, audited and resolved.</td>
+      <td>GuardDuty Report 2</td>
+    </tr>
+
+    <tr class="table-active">
+      <th scope="row">A4</th>
+      <th>Amazon S3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>S3-017</td>
+      <td>Secure Transport</td>
+      <td>Medium (should be achieved)</td>
+      <td class="bg-success">Yes</td>
+      <td class="bg-danger">No</td>
+      <td>Ensure AWS S3 buckets enforce SSL to secure data in transit.</td>
+      <td>fdd</td>
+    </tr>
+    <tr>
+      <td>S3-024</td>
+      <td>S3 Transfer Acceleration</td>
+      <td>Low (generally tolerable level of risk)</td>
+      <td class="bg-success">Yes</td>
+      <td class="bg-danger">No</td>
+      <td>Ensure that Amazon S3 buckets use Transfer Acceleration feature for faster data transfers. </td>
+      <td>djdlk</td>
+    </tr>
+    <tr>
+      <td>S3-020</td>
+      <td>S3 Buckets Lifecycle Configuration</td>
+      <td>Low (generally tolerable level of risk)</td>
+      <td class="bg-success">Yes</td>
+      <td class="bg-danger">No</td>
+      <td>Ensure Amazon S3 buckets have lifecycle configuration enabled for security and cost optimization purposes.
+      </td>
+      <td>S3 Report 3</td>
+    </tr>
+
+  </tbody>
+</table>
+<!-- </ng-template> -->
+<h4>S3 Policy Service = {{data}}<br>{{err}}<br></h4>
+<h4>S3 Lifecycle Service = {{data1}}<br>{{err1}}<br></h4>
+<h4>S3 TransferAcceleration Service = {{data2}}<br>{{err2}}<br></h4>
+<h4>Health Service = {{data3}}<br>{{err3}}<br></h4>
+<h4>ECS Service = {{data4}}<br>{{err4}}<br></h4>
+<h4>DAX Service = {{data5}}<br>{{err5}}<br></h4>

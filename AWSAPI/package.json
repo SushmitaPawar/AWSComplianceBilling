@@ -1,0 +1,17 @@
+{
+  "name": "awsapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.620.0",
+    "aws-sdk-promise": "0.0.2",
+    "express": "^4.17.1",
+    "moment": "^2.24.0"
+  }
+}
